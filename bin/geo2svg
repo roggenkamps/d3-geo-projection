@@ -17,6 +17,7 @@ commander
     .option("-n, --newline-delimited", "accept newline-delimited JSON")
     .option("--fill <value>", "default fill", "none")
     .option("--stroke <value>", "default stroke", "black")
+    .option("-c, --class", "add style classas to SVG elements")
     .option("-r, --radius <value>", "default point radius", 4.5)
     .parse(process.argv);
 
@@ -48,7 +49,8 @@ function transform(d) {
   var p = d.properties, v;
   return writer.write("  <path"
       + ((v = d.id) != null ? " id=\"" + attr(v + "") + "\"" : "")
-      + (p ? ((v = p["fill"]) != null ? " fill=\"" + attr(v + "") + "\"" : "")
+      + (p ? ((v = p["class"]) != null ? " class=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["fill"]) != null ? " fill=\"" + attr(v + "") + "\"" : "")
         + ((v = p["fill-rule"] || p.fillRule) != null ? " fill-rule=\"" + attr(v + "") + "\"" : "")
         + ((v = p["fill-opacity"] || p.fillOpacity) != null ? " fill-opacity=\"" + attr(v + "") + "\"" : "")
         + ((v = p["stroke"]) != null ? " stroke=\"" + attr(v + "") + "\"" : "")

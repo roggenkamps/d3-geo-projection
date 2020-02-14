@@ -948,6 +948,7 @@ Converts the specified GeoJSON *file* to SVG. With [--newline-delimited](#geo2sv
 
 By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#geo2svg_stroke) is set to black. The default [point radius](https://github.com/d3/d3-geo/blob/master/README.md#path_pointRadius) is 4.5. To override these values on a per-feature basis, the following [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) properties will be propagated to attributes:
 
+* class
 * fill
 * fill-rule (or fillRule)
 * fill-opacity (or fillOpacity)
@@ -1012,6 +1013,11 @@ Specify the default output point radius. Defaults to 4.5.
 <br><a href="#geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
 
 Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line.
+
+<a name="geo2svg_class" href="#geo2svg_class">#</a> geo2svg <b>-c</b>
+<br><a href="#geo2svg_class">#</a> geo2svg <b>--class</b>
+
+Copy [styling class](https://www.w3.org/TR/SVG11/styling.html#ClassAttribute) property values to the output SVG elements.
 
 ### geograticule
 
